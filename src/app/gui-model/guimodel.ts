@@ -192,20 +192,20 @@ export class GuiModel {
                     "elementList": [
                         {
                             "type": "button",
-                            "name": "Friends",
+                            "name": "Friends",//Friend-Button im Main Menu
                             "icon": "fa-user",
                             "color": "blue",
                             "page": "friendspage",
                         },
                         {
                             "type": "button",
-                            "name": "Location",
+                            "name": "Location",//Location-Button im Main Menu
                             "icon": "fa-cubes",
                             "color": "yellow",
                             "page": "locationspage",
                         },
                         {   "type": "button", 
-                            "name": "Groups", 
+                            "name": "Groups", //Groups-Button im Main Menu
                             "icon": "fa-weixin", 
                             "color": "wisteria", 
                             "page": "groupspage", 
@@ -213,14 +213,14 @@ export class GuiModel {
                     ]
                 },
                 {
-                    "id": "friendspage",
+                    "id": "friendspage",//nach Klick auf Friend 
                     "elementList": [
                         {
-                            "type": "backbutton",
+                            "type": "backbutton",//erscheint Back-Button 
                         },
                         {
                             "type": "newButton",
-                            "name": "NewFriend",
+                            "name": "NewFriend",//erscheint New Friend-Button
                             "icon": "fa-user",
                             "color": "green",
                             "form": {
@@ -228,7 +228,7 @@ export class GuiModel {
                             }
                         },
                         {
-                            "type": "list",
+                            "type": "list",//erstellte Firends werden so dargestellt
                             "icon": "fa-user",
                             "color": "blue",
                             "search": true,
