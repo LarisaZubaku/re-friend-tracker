@@ -234,7 +234,7 @@ export class GuiModel {
                             "color": "blue",
                             "search": true,
                             "url": "/friend",
-                            "page": "friendpage",//Verbindung, nächsten Klick verbinden, neue Page erstellen
+                            "page": "friendpage",//Verbindung, nächsten Klick verbinden und neue Page erstellen
                         },
                     ]
                 },
