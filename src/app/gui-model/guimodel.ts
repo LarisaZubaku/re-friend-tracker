@@ -6,11 +6,11 @@ export class GuiModel {
 
     private _guiModel = {
         "application": {
-            "title": "Requirements Engineering Friend Tracker",
+            "title": "Larisas Friend Tracker",
             "formList": [
                 {
                     "id": "FriendForm",
-                    "title": "Friend",
+                    "title": "Friend",//Auswahlmöglichkeiten bei new Friend
                     "url": "/friend",
                     "formFieldList": [
                         {
@@ -26,6 +26,19 @@ export class GuiModel {
                             "name": "FirstName",
                             "width": 1,
                             "required": true
+                        },
+                        {   "id": "nickname", 
+                            "type": "text", 
+                            "name": "Nickname", 
+                            "width": 2, 
+                            "required": true 
+                        },
+                        {   "id": "group", 
+                            "type": "autocomplete", 
+                            "name": "Group",
+                            "url": "/group", 
+                            "form": "GroupForm", 
+                            "width": 2 
                         },
                         {
                             "id":   "location",
@@ -65,7 +78,7 @@ export class GuiModel {
                 },
                 {
                     "id": "LocationForm",
-                    "title": "Location",
+                    "title": "Location",//Auswahlmöglichkeiten bei new Location
                     "url": "/location",
                     "formFieldList": [
                         {
@@ -86,8 +99,55 @@ export class GuiModel {
                         {
                             "type": "okButton",
                             "name": "Ok"
-                        }
+                        },
+                        {
+                         "id": "comment",
+                            "type": "text",
+                            "name": "Comments",
+                            "width": 2,
+                            "height": 4,
+                            "maxLength": 5000,
+                        },
                     ]
+                },
+                {   "id": "GroupForm", 
+                    "title": "Group", //Auswahlmöglichkeiten bei new Group
+                    "url": "/group", 
+                    "formFieldList": [ 
+                        { 
+                            "id": "name", 
+                            "type": "text", 
+                            "name": "GroupName", 
+                            "width": 2, 
+                            "required": true 
+                        }, 
+                        { 
+                            "type": "deleteButton", 
+                            "name": "Delete" 
+                        }, 
+                        { 
+                            "type": "cancelButton", 
+                            "name": "Cancel" 
+                        }, 
+                        { 
+                            "type": "okButton", 
+                            "name": "Ok" 
+                        },
+                        {
+                            "id": "creationdate",
+                            "type": "date",
+                            "name": "CreationDate",
+                            "width": 2
+                        },
+                        {
+                            "id": "comment",
+                            "type": "text",
+                            "name": "Comments",
+                            "width": 2,
+                            "height": 4,
+                            "maxLength": 5000,
+                        },
+                    ] 
                 },
                 {
                     "id": "AddActivityForm",
@@ -118,6 +178,12 @@ export class GuiModel {
                         }
                     ]
                 },
+                        {   "id": "group", 
+                            "type": "autocomplete", 
+                            "name": "Group",
+                            "url": "/group", 
+                            "form": "GroupForm", 
+                            "width": 2 },
             ],
             "pageList": [
                 {
@@ -137,6 +203,12 @@ export class GuiModel {
                             "icon": "fa-cubes",
                             "color": "yellow",
                             "page": "locationspage",
+                        },
+                        {   "type": "button", 
+                            "name": "Groups", 
+                            "icon": "fa-weixin", 
+                            "color": "wisteria", 
+                            "page": "groupspage", 
                         },
                     ]
                 },
@@ -167,6 +239,33 @@ export class GuiModel {
                         },
                     ]
                 },
+                         { "id": "groupspage", 
+                            "elementList": [ 
+                                { 
+                                    "type": "backbutton", 
+                                }, 
+                                { 
+                                    "type": "newButton", 
+                                    "name": "NewGroup", 
+                                    "icon": "fa-weixin", 
+                                    "color": "green", 
+                                    "form": { 
+                                        "form": "GroupForm" 
+                                    } 
+                                },
+                              
+                                { 
+                                    "type":"list",
+                                    "icon":"fa-weixin",
+                                    "color": "wisteria",
+                                    "search": true,
+                                    "url": "/group",
+                                    "form": { 
+                                        "form": "GroupForm" 
+                                    } 
+                                }  
+                            ] 
+                        },   
                 {
                     "id": "locationspage",
                     "elementList": [
