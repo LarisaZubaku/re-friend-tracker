@@ -152,7 +152,7 @@ export class GuiModel {
                 {
                     "id": "AddActivityForm",
                     "title": "Activity",
-                    "url": "/friend/:friendKey/activity",
+                    "url": "activity",
                     "formFieldList": [
                         {
                             "id":   "activity",
@@ -212,7 +212,8 @@ export class GuiModel {
                         },
                     ]
                 },
-                {
+
+                 {
                     "id": "friendspage",//nach Klick auf Friend 
                     "elementList": [
                         {
@@ -233,10 +234,45 @@ export class GuiModel {
                             "color": "blue",
                             "search": true,
                             "url": "/friend",
+                            "page": "friendpage",//Verbindung, nächsten Klick verbinden, neue Page erstellen
+                        },
+                    ]
+                },
+                {
+                    "id": "friendpage",//nach Klick auf Friend aus der Liste
+                    "elementList": [
+                        {
+                            "type": "backbutton",//erscheint Back-Button 
+                        },
+                        {
+                            "type": "button",
+                            "name": "EditFriend",//erscheint Edit Friend-Button
+                            "icon": "fa-user",
+                            "color": "green",
                             "form": {
                                 "form": "FriendForm"
                             }
                         },
+                              {
+                            "type": "button",
+                            "name": "AddActivity",//erscheint Add Activity-Button
+                            "icon": "fa-calendar-alt",
+                            "color": "green",
+                            "form": {
+                                "form": "AddActivityForm"//Angaben zu Activity anpassen können
+                            }
+                        },
+                        {
+                            "type": "list",//erstellte Firends werden so dargestellt
+                            "icon": "fa-calendar-alt",
+                            "color": "pumpkin",
+                            "search": true,
+                            "url": "/friend/:friendKey/activity",
+                            "form": {
+                                "form": "FriendForm"
+                            }
+                        },
+                    
                     ]
                 },
                          { "id": "groupspage", 
